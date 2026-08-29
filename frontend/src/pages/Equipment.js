@@ -14,7 +14,7 @@ function Equipment() {
 
   const fetchEquipment = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/equipment');
+      const res = await axios.get('https://research-lab-platform-ae4k.onrender.com/api/equipment');
       setEquipmentList(res.data);
     } catch (err) {
       setError('Failed to load equipment');
@@ -35,7 +35,7 @@ function Equipment() {
     setError('');
     try {
       await axios.post(
-        'http://localhost:5000/api/equipment',
+        'https://research-lab-platform-ae4k.onrender.com/api/equipment',
         { name, type, location },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -50,7 +50,7 @@ function Equipment() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/equipment/${id}`, {
+      await axios.delete(`https://research-lab-platform-ae4k.onrender.com/api/equipment/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchEquipment();

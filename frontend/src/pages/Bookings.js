@@ -19,7 +19,7 @@ function Bookings() {
 
   const fetchBookings = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/bookings');
+      const res = await axios.get('https://research-lab-platform-ae4k.onrender.com/api/bookings');
       setBookings(res.data);
     } catch (err) {
       setError('Failed to load bookings');
@@ -28,7 +28,7 @@ function Bookings() {
 
   const fetchEquipmentList = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/equipment');
+      const res = await axios.get('https://research-lab-platform-ae4k.onrender.com/api/equipment');
       setEquipmentList(res.data);
     } catch (err) {
       setError('Failed to load equipment list');
@@ -51,7 +51,7 @@ function Bookings() {
     setSuccess('');
     try {
       await axios.post(
-        'http://localhost:5000/api/bookings',
+        'https://research-lab-platform-ae4k.onrender.com/api/bookings',
         {
           equipment,
           researcherName,
@@ -75,7 +75,7 @@ function Bookings() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/bookings/${id}`, {
+      await axios.delete(`https://research-lab-platform-ae4k.onrender.com/api/bookings/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchBookings();

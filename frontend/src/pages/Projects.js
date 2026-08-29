@@ -17,7 +17,7 @@ function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/projects');
+      const res = await axios.get('https://research-lab-platform-ae4k.onrender.com/api/projects');
       setProjects(res.data);
     } catch (err) {
       setError('Failed to load projects');
@@ -44,7 +44,7 @@ function Projects() {
         .filter((m) => m.length > 0);
 
       await axios.post(
-        'http://localhost:5000/api/projects',
+        'https://research-lab-platform-ae4k.onrender.com/api/projects',
         { name, description, principalInvestigator, members },
         { headers: { Authorization: `Bearer ${token}` } }
       );
